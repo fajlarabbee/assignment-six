@@ -1,13 +1,13 @@
 -- Task 3:
 SELECT
-    cat.name as category_name,
-    sum(o.total_amount) as total_revenue
+    categories.category_id,
+    categories.name,
+    SUM(order_items.quantity * order_items.unit_price) as total_revenue
 FROM
-    categories cat
-    join products p on p.category_id = cat.category_id
-    join order_items ord_itm on ord_itm.product_id = p.product_id
-    join orders o on o.order_id = ord_itm.order_id
+    order_items
+    join products on products.product_id = order_items.product_id
+    join categories on categories.category_id = products.category_id
 group by
-    p.category_id
+    products.category_id
 order by
-    total_revenue DESC;
+    total_revenue desc;
