@@ -1,6 +1,5 @@
 -- Task 3:
 SELECT
-    cat.category_id,
     cat.name,
     SUM(ord_itm.quantity * ord_itm.unit_price) AS total_revenue
 FROM
