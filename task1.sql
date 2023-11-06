@@ -4,7 +4,7 @@ SELECT
     cust.name,
     cust.email,
     cust.location,
-    count(o.order_id) AS total_orders
+    COUNT(o.order_id) AS total_orders
 FROM
     customers cust
     JOIN orders o ON o.customer_id = cust.customer_id
