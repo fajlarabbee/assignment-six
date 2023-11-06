@@ -4,7 +4,7 @@ SELECT
     COUNT(o.order_id) AS total_orders
 FROM
     customers cust
-    JOIN orders o ON o.customer_id = cust.customer_id
+    LEFT JOIN orders o ON o.customer_id = cust.customer_id
 GROUP BY
     cust.customer_id
 ORDER BY
