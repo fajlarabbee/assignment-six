@@ -1,6 +1,6 @@
 -- Task 1:
 SELECT
-	cust.customer_id,
+    cust.customer_id,
     cust.name,
     cust.email,
     cust.location,
